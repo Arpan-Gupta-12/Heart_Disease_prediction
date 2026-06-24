@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Heart Disease Predictor</h1>
+<p class="subtitle">Fill in the details below and click Predict</p>
+
+<form id="predForm" novalidate>
+
+    <p class="section-title">Patient Info</p>
+
+    <div class="field">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="e.g. 45" min="1" max="120">
+    </div>
+
+    <div class="field">
+        <label for="sex">Sex</label>
+        <select id="sex">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+    </div>
+
+    <hr class="divider">
+    <p class="section-title">Vitals</p>
+
+    <div class="field">
+        <label for="bp">Resting Blood Pressure (mm Hg)</label>
+        <input type="number" id="bp" placeholder="e.g. 120" min="50" max="250">
+    </div>
+
+    <div class="field">
+        <label for="chol">Cholesterol (mg/dl)</label>
+        <input type="number" id="chol" placeholder="e.g. 200" min="0" max="700">
+    </div>
+
+    <div class="field">
+        <label for="fasting">Fasting Blood Sugar &gt; 120 mg/dl?</label>
+        <select id="fasting">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="maxhr">Max Heart Rate Achieved</label>
+        <input type="number" id="maxhr" placeholder="e.g. 150" min="50" max="220">
+    </div>
+
+    <div class="field">
+        <label for="oldpeak">Oldpeak (ST Depression)</label>
+        <input type="number" step="0.1" id="oldpeak" placeholder="e.g. 1.0" min="-5" max="10">
+        <div class="hint">Numeric value measured in ST depression</div>
+    </div>
+
+    <hr class="divider">
+    <p class="section-title">Clinical</p>
+
+    <div class="field">
+        <label for="chest">Chest Pain Type</label>
+        <select id="chest">
+            <option value="ATA">ATA &mdash; Atypical Angina</option>
+            <option value="NAP">NAP &mdash; Non-Anginal Pain</option>
+            <option value="TA">TA &mdash; Typical Angina</option>
+            <option value="ASY">ASY &mdash; Asymptomatic</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="ecg">Resting ECG Result</label>
+        <select id="ecg">
+            <option value="Normal">Normal</option>
+            <option value="ST">ST</option>
+            <option value="LVH">LVH</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="angina">Exercise-Induced Angina</label>
+        <select id="angina">
+            <option value="N">No</option>
+            <option value="Y">Yes</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="slope">ST Slope</label>
+        <select id="slope">
+            <option value="Up">Up</option>
+            <option value="Flat">Flat</option>
+            <option value="Down">Down</option>
+        </select>
+    </div>
+
+    <button type="submit" id="submitBtn">Predict</button>
+
+</form>
+
+<div id="result"></div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
